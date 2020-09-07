@@ -1,0 +1,24 @@
+// NEW YEAR COUNTDOWN //
+(after we styled our landing page we need to make it come alive)
+
+1. WE NEED DAYS HOURS MINUTES AND SECONDES
+(we create event variables const)
+2. WE NEED TO GENERATE THE ACTUAL YEAR
+(example so we dont have to update it each year would be
+const current = new Date().getFullYear();
+const newyeartime = new Date(`January 01 ${current + 1} 00:00:00`); )
+3. THEN WE CREATE FUNCTION UPDATECOUNTDOWN
+(we set current time, and then we need to set difference between new year time
+and the current time, we do that simply by const difference = newyeartime - currentime;)
+
+4. THEN WE CALCULATE DAYS HOURS MINUTES AND SECONDS
+(for days lets say Math.floor(difference/ 1000);
+(for minutes lets say Math.floor(difference/ 1000 / 60) % 60; // to get remaing time %
+(for hours lets say Math.floor(difference/ 1000 / 60 / 60) % 24; // to get remaining time
+(for days lets say Math.floor(difference/ 1000) % 60; // to get remaing secondes
+
+5. TO RUN IT EVERY SECOND WE USE SETINTERVAL
+(setInterval(updateCountdown, 1000);
+
+6. WE SET DAYS HOURS MINUTES AND SECONDS TO INNERHTML
+(for minutes we want minutes.innerHTML = m < 10 ? '0' + m : m);
